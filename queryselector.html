@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    <style>
+        body {
+            font: normal 12pt Arial;
+            background-color: rgb(241, 238, 182);
+            color:rgb(24, 53, 92)
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos do DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em Javascript</p>
+    <div id="msg">Clique em mim</div>
+
+    <script>
+        var d = document.querySelector("div#msg") // Vai selecionar a tag entre (" ")
+        d.style.background = "red" // coloquei a cor "red" usando o seletor na variavel d
+        d.innerText = ("Carregando..") // Mudei o texto usando o innerText.
+
+        // querySelector é uma seletor indicado para modificações rápidas
+        
+    </script>
+
+</body>
+</html>

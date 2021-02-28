@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    <style>
+        body {
+            font: normal 12pt Arial;
+            background-color: rgb(241, 238, 182);
+            color:rgb(24, 53, 92)
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos do DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em Javascript</p>
+    <div id="msg">Clique em mim</div>
+
+    <script>
+        /* DOM: Document Object Model
+        Conjunto de objetos, dentro do navegador, que vai dar acesso aos elementos dentro do seu código
+
+        ARVORE DOM (parents & children)
+                                     window
+                                       |
+                    location ----- document ----- history
+                                       |
+                                      HTML
+                                       |
+                            head ---------------- body
+                             |                     |
+                        meta--title..           h1--p--div
+                                                    | 
+                                                'string'
+
+        a arvore acima é o exemplo deste site, mas esxitem outras propriedades.
+
+        */                      
+        
+        // ATENÇÃO: não confundir o nome da tag com o nome da variável
+        var p1 = document.getElementsByTagName('p')[1]
+        // Vai pegar a tag pelo nome e depois é preciso informar a posição, entre []
+
+        var corpo = document.body  
+        // Nesse caso, 'body' é global, não precisa do 'get...'
+        
+        corpo.style.color = "purple" // assim, é possivel mexer no body. (no caso: cor do texto)
+        corpo.style.background = "gray" // aqui, cor do fundo (background)
+        document.write(`Está escrito assim: ${p1.innerHTML}`) // vai mostrar todo o conteudo textual do html da tag.
+
+        var d = window.document.getElementById('msg') // Aqui, o get pega o elemento pelo o nome da id, no caso, "msg".
+        d.style.background = "green" // vai preencher a caixa div com a cor green.
+        d.style.color = "white" // vai mudar a cor do conteudo de texo.
+        // d.innerText = "Estou aguardando..." --> Dessa forma, o get tem mais força e eu posso mudar o texto original.
+
+        document.write(`Está escrito: ${d.innerText}`)
+
+
+
+
+
+    </script>
+
+</body>
+</html>
